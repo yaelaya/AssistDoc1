@@ -137,7 +137,7 @@ public class MainActivityPatient extends AppCompatActivity {
             return;
         }
 
-        Intent sympIntent = new Intent(MainActivityPatient.this, activity_symptoms.class);
+        Intent sympIntent = new Intent(MainActivityPatient.this, ActivitySymptoms.class);
         sympIntent.putExtra("name", name);
         sympIntent.putExtra("gender", gender);
         startActivity(sympIntent);

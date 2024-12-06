@@ -20,8 +20,6 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Logo Image -->
-
-    <!-- Welcome Text -->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="150dp"
@@ -33,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/topBackground" />
 
+    <!-- Welcome Text -->
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
@@ -47,7 +46,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Username TextField -->
+    <!-- Username Input Field -->
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        android:hint="Username"
+        android:padding="12dp"
+        android:textColor="#7D32A8"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/email_reg"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Email Input Field -->
     <EditText
         android:id="@+id/email_reg"
         android:layout_width="0dp"
@@ -61,11 +78,12 @@
         android:textColor="#7D32A8"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/password_reg"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+        app:layout_constraintTop_toBottomOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.8" />
 
+    <!-- Password Input Field -->
     <EditText
         android:id="@+id/password_reg"
         android:layout_width="0dp"
@@ -83,6 +101,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.8" />
 
+    <!-- Confirm Password Input Field -->
     <EditText
         android:id="@+id/password_confirm"
         android:layout_width="0dp"
@@ -100,7 +119,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.8" />
 
-
+    <!-- Terms & Conditions Checkbox -->
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
@@ -114,7 +133,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_confirm" />
 
-    <!-- Login Button -->
+    <!-- Register Button -->
     <Button
         android:id="@+id/reg_btn"
         android:layout_width="0dp"
@@ -131,6 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.8" />
 
+    <!-- Already have an account Text -->
     <TextView
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
@@ -143,8 +163,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-
+    <!-- Bottom Background Image -->
     <ImageView
         android:id="@+id/bottomBackground"
         android:layout_width="0dp"

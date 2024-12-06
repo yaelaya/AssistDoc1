@@ -3,43 +3,47 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Users implements Parcelable {
-
-    private String userid;         // ID unique de l'utilisateur
-    private String status;         // Statut de l'utilisateur (en ligne, hors ligne, etc.)
-    private String username;       // Nom d'utilisateur affiché
-    private String useremail;      // Adresse email de l'utilisateur
+    private long userId;  // Utilisez long si le userId est un nombre
+    private String status;
+    private String username;
+    private String email;
     private String type;
-    private String age;  // Ajoutez un champ pour l'âge
-    private String gender;  // Ajoutez un champ pour le genre
+    private String age;
+    private String gender;
 
-    public Users(){
-        //need firebase
-    }
     // Constructeur par défaut
-    public Users(String userid, String status, String imageUrl, String username, String useremail, boolean hasNewMessage) {
-        this.userid = userid;
+    public Users() {
+        // Firebase nécessite un constructeur par défaut
+    }
+
+    // Constructeur avec tous les paramètres
+    public Users(long userId, String status, String username, String email, String type, String age, String gender) {
+        this.userId = userId;
         this.status = status;
         this.username = username;
-        this.useremail = useremail;
+        this.email = email;
+        this.type = type;
         this.age = age;
         this.gender = gender;
     }
 
     // Constructeur secondaire pour créer un objet Users à partir d'un Parcel
     protected Users(Parcel in) {
-        userid = in.readString();
+        userId = in.readLong();  // Utilisez readLong() pour récupérer le userId comme long
         status = in.readString();
         username = in.readString();
-        useremail = in.readString();
+        email = in.readString();
+        type = in.readString();
+        age = in.readString();
+        gender = in.readString();
     }
 
-    // Getter et Setter pour les propriétés (optionnels selon votre besoin)
-    public String getUserid() {
-        return userid;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getStatus() {
@@ -50,7 +54,6 @@ public class Users implements Parcelable {
         this.status = status;
     }
 
-
     public String getUsername() {
         return username;
     }
@@ -60,13 +63,12 @@ public class Users implements Parcelable {
     }
 
     public String getUseremail() {
-        return useremail;
+        return email;
     }
 
-    public void setUseremail(String useremail) {
-        this.useremail = useremail;
+    public void setUseremail(String email) {
+        this.email = email;
     }
-
 
     public String getType() {
         return type;
@@ -76,31 +78,32 @@ public class Users implements Parcelable {
         this.type = type;
     }
 
-    // Écrit les propriétés de l'utilisateur dans le Parcel
+    // Méthode writeToParcel pour écrire dans le Parcel
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(userid);
+        dest.writeLong(userId);
         dest.writeString(status);
         dest.writeString(username);
-        dest.writeString(useremail);
+        dest.writeString(email);
+        dest.writeString(type);
+        dest.writeString(age);
+        dest.writeString(gender);
     }
 
-    // Méthode nécessaire pour l'interface Parcelable
     @Override
     public int describeContents() {
         return 0;
     }
 
-    // Créateur pour la classe Parcelable
     public static final Parcelable.Creator<Users> CREATOR = new Parcelable.Creator<Users>() {
         @Override
         public Users createFromParcel(Parcel in) {
-            return new Users(in); // Création d'une instance Users à partir d'un Parcel
+            return new Users(in);
         }
 
         @Override
         public Users[] newArray(int size) {
-            return new Users[size]; // Création d'un tableau d'objets Users
+            return new Users[size];
         }
     };
 }

@@ -69,22 +69,13 @@ public class IntroActivity extends AppCompatActivity {
         btnAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.drawable.button_animation);
         tvSkip = findViewById(R.id.tv_skip);
 
-        // fill list screen
-        // MainActivityLogin mainActivityLogin=null;
+
         final List<ScreenItem> mList = new ArrayList<>();
-        // if(mainActivityLogin.langue()==1){
-        mList.add(new ScreenItem("MEDI CONSULT","WELCOME Dear ,explore our application",R.drawable.welcome2));
+
+        mList.add(new ScreenItem("ASSIST DOC","WELCOME Dear ,explore our application",R.drawable.welcome2));
         mList.add(new ScreenItem("Docteur","If you are a doctor you must contact the administration to create an acount",R.drawable.img2));
-        mList.add(new ScreenItem("Patient","If you are a Patient you can create your account here and start using MEDI CONSULT ",R.drawable.img3));
-      /*  }else if(mainActivityLogin.langue()==0){
-            mList.add(new ScreenItem("Tableaux d'art internationaux","Vous pouvez voir un grand nombre de peintures d'art internationales.",R.drawable.welcome));
-            mList.add(new ScreenItem("Livraison rapide","Tous vos achats sont livrés à votre domicile",R.drawable.img2));
-            mList.add(new ScreenItem("Paiement facile","Achat facile  avec votre carte bancaire et en peu de temps",R.drawable.img3));
-        }else{
-            mList.add(new ScreenItem("インターナショナルアートボード","国際的な芸術作品を数多く見ることができる",R.drawable.welcome));
-            mList.add(new ScreenItem("迅速な配送","ご購入いただいた商品はすべてご自宅にお届けします",R.drawable.img2));
-            mList.add(new ScreenItem("簡単な支払い","銀行のカードで簡単に購入でき、しかも短時間で完了する。",R.drawable.img3));
-        } */
+        mList.add(new ScreenItem("Patient","If you are a Patient you can create your account here and start using Assist Doc ",R.drawable.img3));
+
 
 
         // setup viewpager

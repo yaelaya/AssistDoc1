@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ma.ensa.www.assistdoc">
 
     <uses-feature
@@ -11,8 +12,12 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -29,28 +34,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".adapter.UserAdapter"
-            android:exported="false" />
+            android:name=".DoctorProfile"
+            android:exported="false"
+            android:theme="@style/home_theme" />
         <activity android:name=".MainActivityMedi" />
         <activity
             android:name=".ActivityContactUs"
-            android:screenOrientation="portrait"
             android:theme="@style/contact_us_theme" />
-        <activity
-            android:name=".MedicationListActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".MedicationListActivity" />
 
         <receiver
             android:name=".model.MedicationReminderReceiver"
             android:exported="true" />
 
         <activity
-            android:name=".activity_disease"
-            android:screenOrientation="portrait"
+            android:name=".ActivityDisease"
             android:theme="@style/disease_theme" />
         <activity
-            android:name=".activity_symptoms"
-            android:screenOrientation="portrait"
+            android:name=".ActivitySymptoms"
             android:theme="@style/home_theme" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -62,44 +63,34 @@
         -->
         <activity
             android:name=".IntroActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".AskRole"
-            android:screenOrientation="portrait"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".HomeActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".Doctors"
-            android:screenOrientation="portrait"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".Doctors_Update_Profile"
-            android:screenOrientation="portrait"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".activity_sign_up"
-            android:screenOrientation="portrait"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".activity_sign_in"
-            android:screenOrientation="portrait"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".call"
-            android:screenOrientation="portrait"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".MainActivityPatient"
-            android:screenOrientation="portrait"
             android:theme="@style/home_theme" />
         <activity
             android:name=".home"
             android:exported="true"
-            android:screenOrientation="portrait"
             android:theme="@style/home_theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

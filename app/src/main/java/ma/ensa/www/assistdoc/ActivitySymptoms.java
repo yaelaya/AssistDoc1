@@ -34,8 +34,8 @@ public class ActivitySymptoms extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symptoms);
-        dis = findViewById(R.id.disease);
 
+        dis = findViewById(R.id.disease);
         s1 = findViewById(R.id.syp1);
         s2 = findViewById(R.id.syp2);
         s3 = findViewById(R.id.syp3);

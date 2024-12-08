@@ -1,28 +1,6 @@
 package ma.ensa.www.assistdoc;
 
-import androidx.annotation.NonNull;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.annotation.Nullable;
-
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.appbar.MaterialToolbar;
-
-import ma.ensa.www.assistdoc.adapter.MessageAdapter;
-import ma.ensa.www.assistdoc.entities.Messages;
-import ma.ensa.www.assistdoc.model.Users;
-import ma.ensa.www.assistdoc.mvvm.ChatAppViewModel;
 
 
 public class Fragment_Chat extends Fragment {

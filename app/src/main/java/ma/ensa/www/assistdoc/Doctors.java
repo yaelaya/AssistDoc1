@@ -29,8 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import ma.ensa.www.assistdoc.adapter.UserAdapter;
 import ma.ensa.www.assistdoc.model.Users;
 
-public class Doctors extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class Doctors extends AppCompatActivity {}
+/*
     private RecyclerView rvUsers;
     private FirebaseRecyclerAdapter<Users, UserAdapter> adapter;
     private FirebaseRecyclerOptions<Users> options;
@@ -163,3 +163,5 @@ public class Doctors extends AppCompatActivity implements NavigationView.OnNavig
         }
     }
 }
+
+ */

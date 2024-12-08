@@ -19,6 +19,16 @@
             android:id="@+id/nav_sos"
             android:icon="@drawable/call_icon"
             android:title="SOS Call" />
+
+        <item
+            android:id="@+id/nav_medication"
+            android:icon="@drawable/medication_icon"
+            android:title="Prise de Médicaments" />
+
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_setting"
+            android:title="Profile" />
     </group>
 
     <item android:title="Communicate">
@@ -34,10 +44,7 @@
         </menu>
     </item>
     <!-- Ajout du nouvel item "Prise de Médicaments" -->
-    <item
-        android:id="@+id/nav_medication"
-        android:icon="@drawable/medication_icon"
-        android:title="Prise de Médicaments" />
+
 
     <!-- Ajout du item Logout -->
     <item

@@ -10,7 +10,7 @@ import android.widget.Spinner;
 
 
 
-public class activity_symptoms extends AppCompatActivity {
+public class Activity_Symptoms extends AppCompatActivity {
 
     Button dis;
     Spinner s1,s2,s3,s4,s5,s6,s7;
@@ -144,7 +144,7 @@ public class activity_symptoms extends AppCompatActivity {
                 }
 
 
-                Intent dis_page = new Intent(activity_symptoms.this,activity_disease.class);
+                Intent dis_page = new Intent(Activity_Symptoms.this,ActivityDisease.class);
                 dis_page.putExtra("name",name);
                 dis_page.putExtra("gender",gender);
                 dis_page.putExtra("max",max);

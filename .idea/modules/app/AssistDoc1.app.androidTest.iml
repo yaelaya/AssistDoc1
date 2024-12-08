@@ -16,10 +16,8 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debugAndroidTest/out">
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug">
-      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug" type="java-test-resource" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug" type="java-test-resource" generated="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../../app/src/androidTest">
@@ -28,7 +26,7 @@
     <content url="file://$MODULE_DIR$/../../../app/src/androidTestDebug" />
     <orderEntry type="jdk" jdkName="Android API 34, extension level 7 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="AssitDoc.app.main" scope="TEST" />
+    <orderEntry type="module" module-name="AssistDoc1.app.main" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:runner:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:monitor:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test.espresso:espresso-core:3.2.0@aar" level="project" />
@@ -81,14 +79,19 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.room:room-runtime:2.6.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.sqlite:sqlite:2.4.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.sqlite:sqlite-framework:2.4.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-storage:20.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-base:18.0.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-basement:18.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-tasks:18.0.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-appcheck-interop:16.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-common:20.2.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-components:17.0.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-auth-interop:20.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-extensions:2.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-process:2.6.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.startup:startup-runtime:1.1.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-service:2.6.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-maps:17.0.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-base:18.0.1@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-basement:18.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-tasks:18.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-analytics:21.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-measurement:21.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-ads-identifier:18.0.0@aar" level="project" />
@@ -97,8 +100,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-stats:17.0.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-measurement-api:21.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-measurement-sdk-api:21.2.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-common:20.2.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-components:17.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-installations:17.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-installations-interop:17.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-measurement-connector:19.0.0@aar" level="project" />
@@ -107,9 +108,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.browser:browser:1.4.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-auth-api-phone:18.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-safetynet:17.0.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-auth-interop:20.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-database:20.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-appcheck-interop:16.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-database-collection:18.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-firestore:24.4.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:protolite-well-known-types:18.0.0@aar" level="project" />
@@ -124,6 +123,9 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-places-placereport:17.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.airbnb.android:lottie:3.4.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: de.hdodenhof:circleimageview:3.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.picasso:picasso:2.8@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.exifinterface:exifinterface:1.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.intuit.sdp:sdp-android:1.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.annotation:annotation-jvm:1.6.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.8.22" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22" level="project" />
@@ -163,6 +165,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: io.reactivex.rxjava3:rxjava:3.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.reactivestreams:reactive-streams:1.0.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.okio:okio:1.17.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.okhttp3:okhttp:3.10.0" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="AssitDoc.app.main" />
+  <component name="TestModuleProperties" production-module="AssistDoc1.app.main" />
 </module>

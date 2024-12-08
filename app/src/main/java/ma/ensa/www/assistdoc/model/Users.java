@@ -3,24 +3,51 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Users implements Parcelable {
-    private long userId;  // Utilisez long si le userId est un nombre
-    private String status;
-    private String username;
-    private String email;
-    private String type;
-    private String age;
-    private String gender;
+    String userId;  // Utilisez long si le userId est un nombre
+    String status;
+    String userName;
+    String email;
+    String type;
+    String age;
+    String gender;
+    String profilepic ,lastMessage ;
+    String password ;
 
-    // Constructeur par défaut
     public Users() {
         // Firebase nécessite un constructeur par défaut
     }
 
+    public Users(String id, String userName, String email, String password, String profilepic, String status) {
+        this.userId= id ;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.profilepic = profilepic;
+        this.status = status;
+
+    }
+
+    public String getLastMessage() {
+        return lastMessage;
+    }
+
+    public void setLastMessage(String lastMessage) {
+        this.lastMessage = lastMessage;
+    }
+
+    public String getProfilepic() {
+        return profilepic;
+    }
+
+    public void setProfilepic(String profilepic) {
+        this.profilepic = profilepic;
+    }
+
     // Constructeur avec tous les paramètres
-    public Users(long userId, String status, String username, String email, String type, String age, String gender) {
+    public Users(String userId, String status, String username, String email, String type, String age, String gender) {
         this.userId = userId;
         this.status = status;
-        this.username = username;
+        this.userName = username;
         this.email = email;
         this.type = type;
         this.age = age;
@@ -29,20 +56,20 @@ public class Users implements Parcelable {
 
     // Constructeur secondaire pour créer un objet Users à partir d'un Parcel
     protected Users(Parcel in) {
-        userId = in.readLong();  // Utilisez readLong() pour récupérer le userId comme long
+        userId = in.readString();  // Utilisez readLong() pour récupérer le userId comme long
         status = in.readString();
-        username = in.readString();
+        userName = in.readString();
         email = in.readString();
         type = in.readString();
         age = in.readString();
         gender = in.readString();
     }
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -55,11 +82,11 @@ public class Users implements Parcelable {
     }
 
     public String getUsername() {
-        return username;
+        return userName;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.userName = username;
     }
 
     public String getUseremail() {
@@ -81,9 +108,9 @@ public class Users implements Parcelable {
     // Méthode writeToParcel pour écrire dans le Parcel
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(userId);
+        dest.writeString(userId);
         dest.writeString(status);
-        dest.writeString(username);
+        dest.writeString(userName);
         dest.writeString(email);
         dest.writeString(type);
         dest.writeString(age);

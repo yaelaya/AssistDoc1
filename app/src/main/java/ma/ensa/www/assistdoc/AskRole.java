@@ -1,6 +1,5 @@
 package ma.ensa.www.assistdoc;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -51,7 +50,7 @@ public class AskRole extends AppCompatActivity {
         patientButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AskRole.this, activity_sign_in.class));
+                startActivity(new Intent(AskRole.this, Activity_SignIn.class));
                 //checkPatientSession();
             }
         });
@@ -59,7 +58,7 @@ public class AskRole extends AppCompatActivity {
         patientview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AskRole.this, activity_sign_in.class));
+                startActivity(new Intent(AskRole.this, Activity_SignIn.class));
                 //checkPatientSession();
             }
         });

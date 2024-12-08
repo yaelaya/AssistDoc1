@@ -80,6 +80,11 @@
           <theme>@style/home_theme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in_doctor.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml">
         <config>
           <theme>@style/standardtheme</theme>
@@ -197,69 +202,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d9e4e1e-7026-4a0c-8ec8-ea0a12093f4d" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_storage_20_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_intuit_sdp_sdp_android_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_8_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/AssistDoc1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/AssistDoc1.app.androidTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/AssistDoc1.app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/AssistDoc1.app.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/AssistDoc1.app.unitTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Activity_Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Activity_SignUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Chat_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/adapter/messagesAdpter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/chatwindo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/model/msgModelclass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bordermain.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/empty_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/reciver_shape.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/sendbut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/sender_shape.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/shapedialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chat.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chatwindo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/reciver_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/sender_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/AssitDoc.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/AssitDoc.app.androidTest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/AssitDoc.app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/AssitDoc.app.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/AssitDoc.app.unitTest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/SignIn_Doctor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/ActivityDisease.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/ActivityDisease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/ActivitySymptoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/ActivitySymptoms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Activity_SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Activity_SignUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/AskRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/AskRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Chat_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Chat_Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Doctors.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Doctors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Fragment_Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Fragment_Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/MainActivityPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/MainActivityPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/activity_disease.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/activity_sign_in.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Activity_SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/activity_sign_up.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/activity_symptoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Activity_Symptoms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/adapter/MessageAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/adapter/UserAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/adapter/UserAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/model/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_disease.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_disease.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_symptoms.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_symptoms.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/chatitemleft.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/chatitemright.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_chat.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_patient.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_patient.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/user_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/user_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/drawer_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/drawer_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/HomeActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_doctors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_doctors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_phone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in_doctor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/doctor_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/doctor_menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -276,7 +229,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=f2a653d4)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Administrateur\.android\avd\Pixel_8a_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />

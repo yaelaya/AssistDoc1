@@ -4,13 +4,14 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,11 +30,11 @@ import ma.ensa.www.assistdoc.model.Users;
 public class Chat_Activity extends AppCompatActivity {
     FirebaseAuth auth;
     RecyclerView mainUserRecyclerView;
-    UserAdapter  adapter;
+    UserAdapter adapter;
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
     ImageView imglogout;
-    ImageView cumbut,setbut;
+    ImageView cumbut, setbut;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,85 +42,144 @@ public class Chat_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-
-        // Vérifier si l'ActionBar existe avant de la cacher
+        // Hide ActionBar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
         }
-        database=FirebaseDatabase.getInstance();
+
+        // Initialize Firebase and UI components
+        database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
         cumbut = findViewById(R.id.camBut);
 
         DatabaseReference reference = database.getReference().child("user");
-
         usersArrayList = new ArrayList<>();
 
         mainUserRecyclerView = findViewById(R.id.mainUserRecyclerView);
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new UserAdapter(Chat_Activity.this,usersArrayList);
+        adapter = new UserAdapter(Chat_Activity.this, usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
 
+        // Fetch current user data and filter users based on status
+        String currentUserId = auth.getCurrentUser().getUid();
+        checkUserRoleAndFetchData(currentUserId);
 
+        // Logout button handling
+        imglogout = findViewById(R.id.logoutimg);
+        imglogout.setOnClickListener(v -> {
+            Dialog dialog = new Dialog(Chat_Activity.this, R.style.dialoge);
+            dialog.setContentView(R.layout.dialog_layout);
+            Button no, yes;
+            yes = dialog.findViewById(R.id.yesbnt);
+            no = dialog.findViewById(R.id.nobnt);
+            yes.setOnClickListener(v1 -> {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(Chat_Activity.this, Activity_SignIn.class);
+                startActivity(intent);
+                finish();
+            });
+            no.setOnClickListener(v12 -> dialog.dismiss());
+            dialog.show();
+        });
+
+        // Camera button handling
+        cumbut.setOnClickListener(v -> {
+            Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, 10);
+        });
+
+        // Check if the user is logged in
+        if (auth.getCurrentUser() == null) {
+            Intent intent = new Intent(Chat_Activity.this, Activity_SignIn.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    private void checkUserRoleAndFetchData(String userId) {
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("user");
+        usersRef.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String status = dataSnapshot.child("status").getValue(String.class);
+                    Log.d("Doctors", "User status: " + status);
+
+                    if ("DOCTOR".equals(status)) {
+                        // If the current user is a doctor, fetch all patients
+                        fetchPatients();
+                    } else {
+                        // If the current user is not a doctor, fetch the unique doctor
+                        fetchDoctor();
+                    }
+                } else {
+                    Log.e("Doctors", "Utilisateur non trouvé.");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("Doctors", "Erreur de récupération des données utilisateur: " + databaseError.getMessage());
+            }
+        });
+    }
+
+    private void fetchPatients() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("user");
+        usersArrayList.clear(); // Clear the list before adding new data
+
+        // Fetch all patients for doctors
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot: snapshot.getChildren())
-                {
-                    Users users = dataSnapshot.getValue(Users.class);
-                    usersArrayList.add(users);
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Users user = dataSnapshot.getValue(Users.class);
+
+                    if (user != null) {
+                        String status = dataSnapshot.child("status").getValue(String.class);
+                        if ("PATIENT".equals(status)) {
+                            usersArrayList.add(user); // Add patient to the list
+                        }
+                    }
                 }
+
+                // Notify the adapter that the data has changed
                 adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                // Handle errors here
+                Toast.makeText(Chat_Activity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        imglogout = findViewById(R.id.logoutimg);
+    }
 
-        imglogout.setOnClickListener(new View.OnClickListener() {
+    private void fetchDoctor() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("user");
+        usersArrayList.clear(); // Clear the list before adding the doctor
+
+        // Fetch the doctor (since there should only be one in the database)
+        reference.orderByChild("status").equalTo("DOCTOR").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                Dialog dialog = new Dialog(Chat_Activity.this,R.style.dialoge);
-                dialog.setContentView(R.layout.dialog_layout);
-                Button no,yes;
-                yes = dialog.findViewById(R.id.yesbnt);
-                no = dialog.findViewById(R.id.nobnt);
-                yes.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(Chat_Activity.this,Activity_SignIn.class);
-                        startActivity(intent);
-                        finish();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Users doctor = dataSnapshot.getValue(Users.class);
+                    if (doctor != null) {
+                        usersArrayList.add(doctor); // Add the doctor to the list
                     }
-                });
-                no.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
+                }
+
+                // Notify the adapter that the data has changed
+                adapter.notifyDataSetChanged();
             }
-        });
 
-
-
-        cumbut.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,10);
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle errors here
+                Toast.makeText(Chat_Activity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
-        if (auth.getCurrentUser() == null){
-            Intent intent = new Intent(Chat_Activity.this,Activity_SignIn.class);
-            startActivity(intent);
-        }
-
     }
 }

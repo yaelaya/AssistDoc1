@@ -70,11 +70,13 @@
             android:name=".AskRole"
             android:theme="@style/standardtheme" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".SignIn_Doctor"
             android:theme="@style/standardtheme" />
         <activity
             android:name=".Doctors"
-            android:theme="@style/standardtheme" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
         <activity
             android:name=".Doctors_Update_Profile"
             android:theme="@style/standardtheme" />

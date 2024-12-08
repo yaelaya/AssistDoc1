@@ -6,6 +6,11 @@
         <item name="colorPrimary">@color/basic</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimaryDark">@color/black</item>
+
+        <!-- Disable the default action bar -->
+        <item name="windowActionBar">false</item>
+        <!-- Optional: Enable Toolbar -->
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Divider">
@@ -43,6 +48,9 @@
     <item name="colorPrimary">@color/white
 
     </item>
+
+
+
 </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

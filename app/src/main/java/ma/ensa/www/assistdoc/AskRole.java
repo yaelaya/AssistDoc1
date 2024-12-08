@@ -33,7 +33,7 @@ public class AskRole extends AppCompatActivity {
         doctorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AskRole.this, HomeActivity.class));
+                startActivity(new Intent(AskRole.this, SignIn_Doctor.class));
                 //checkDoctorSession();
             }
 
@@ -42,7 +42,7 @@ public class AskRole extends AppCompatActivity {
         doctorview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AskRole.this, HomeActivity.class));
+                startActivity(new Intent(AskRole.this, SignIn_Doctor.class));
                 // checkDoctorSession();
             }
         });

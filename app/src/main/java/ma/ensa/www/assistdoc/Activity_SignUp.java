@@ -44,7 +44,7 @@ public class Activity_SignUp extends AppCompatActivity {
     // Other variables
     private ProgressDialog progressDialog;
     private final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-    private final String status = "Hey I'm Using This Application";
+    private final String status = "PATIENT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

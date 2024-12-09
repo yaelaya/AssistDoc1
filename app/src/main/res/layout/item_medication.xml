@@ -23,7 +23,7 @@
         android:layout_weight="1"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/textMedName"
+            android:id="@+id/textViewNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nom du Médicament"
@@ -32,10 +32,26 @@
             android:textColor="#333333"/>
 
         <TextView
-            android:id="@+id/textMedTime"
+            android:id="@+id/textViewHeurePris"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Heure de prise"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp"/>
+        <TextView
+            android:id="@+id/textViewFrequence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fréquence"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp"/>
+        <TextView
+            android:id="@+id/textViewDosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dosage"
             android:textSize="16sp"
             android:textColor="#666666"
             android:layout_marginTop="4dp"/>

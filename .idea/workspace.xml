@@ -202,18 +202,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d9e4e1e-7026-4a0c-8ec8-ea0a12093f4d" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/SignIn_Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/adapter/MedicamentAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Activity_SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Activity_SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/AskRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/AskRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Chat_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Chat_Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Doctors.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/Doctors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/HomeActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_doctors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_doctors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_phone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in_doctor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/doctor_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/doctor_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/MainActivityMedi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/MainActivityMedi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/MedicationListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/MedicationListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/adapter/MedicationAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/adapter/MedicationAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/entities/Medicament.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/entities/Medicament.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_medication_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_medication_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_medication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_medication.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -445,6 +442,15 @@
     <servers />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ma/ensa/www/assistdoc/model/MedicationReminderReceiver.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="ma.ensa.www.assistdoc.Doctors" memberName="rvUsers" />

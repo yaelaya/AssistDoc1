@@ -14,8 +14,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 
 import java.util.Calendar;
 import java.util.List;
@@ -26,15 +27,14 @@ import ma.ensa.www.assistdoc.model.MedicationReminderReceiver;
 public class MainActivityMedi extends AppCompatActivity {
     private EditText editNom, editDosage, editFrequence, editHeurePris;
     private Button buttonAdd, buttonViewMeds;
-    private FirebaseFirestore db;
     private FirebaseAuth mAuth;
+    private DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_medi);
 
-        // Initialiser les champs
         editNom = findViewById(R.id.editNom);
         editDosage = findViewById(R.id.editDosage);
         editFrequence = findViewById(R.id.editFrequence);
@@ -42,11 +42,9 @@ public class MainActivityMedi extends AppCompatActivity {
         buttonAdd = findViewById(R.id.buttonAdd);
         buttonViewMeds = findViewById(R.id.buttonViewMeds);
 
-        // Initialisation de Firebase
-        db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
+        dbRef = FirebaseDatabase.getInstance().getReference("medications");
 
-        // Ajouter un médicament
         buttonAdd.setOnClickListener(view -> {
             String nom = editNom.getText().toString();
             String dosage = editDosage.getText().toString();
@@ -58,25 +56,15 @@ public class MainActivityMedi extends AppCompatActivity {
                 return;
             }
 
-            Medicament medicament = new Medicament();
-            medicament.setNom(nom);
-            medicament.setDosage(dosage);
-            medicament.setFrequence(frequence);
-            medicament.setHeurePris(heurePris);
+            Medicament medicament = new Medicament(nom, dosage, frequence, heurePris);
 
-            // Vérifier si l'utilisateur est authentifié
             if (mAuth.getCurrentUser() != null) {
                 String userId = mAuth.getCurrentUser().getUid();
 
-                // Ajouter le médicament à Firestore sous la collection de l'utilisateur
-                db.collection("Users")
-                        .document(userId)
-                        .collection("medications")
-                        .add(medicament)
-                        .addOnSuccessListener(documentReference -> {
+                dbRef.child(userId).push().setValue(medicament)
+                        .addOnSuccessListener(aVoid -> {
                             Toast.makeText(MainActivityMedi.this, "Médicament ajouté à Firebase!", Toast.LENGTH_SHORT).show();
-                            loadMedications(); // Optionnel: Charger les médicaments après ajout
-                            scheduleMedicationReminders(medicament); // Planification des rappels
+                            scheduleMedicationReminders(medicament);
                         })
                         .addOnFailureListener(e -> {
                             Toast.makeText(MainActivityMedi.this, "Erreur lors de l'ajout du médicament", Toast.LENGTH_SHORT).show();
@@ -86,40 +74,10 @@ public class MainActivityMedi extends AppCompatActivity {
             }
         });
 
-        // Voir les médicaments
         buttonViewMeds.setOnClickListener(view -> {
             Intent intent = new Intent(this, MedicationListActivity.class);
             startActivity(intent);
         });
-
-        // Charger les médicaments au démarrage
-        loadMedications();
-    }
-
-    private void loadMedications() {
-        // Vérifier si l'utilisateur est authentifié
-        if (mAuth.getCurrentUser() != null) {
-            String userId = mAuth.getCurrentUser().getUid();
-
-            // Charger les médicaments depuis Firebase
-            db.collection("Users")
-                    .document(userId)
-                    .collection("medications")
-                    .get()
-                    .addOnSuccessListener(queryDocumentSnapshots -> {
-                        List<Medicament> medications = queryDocumentSnapshots.toObjects(Medicament.class);
-                        // Mettez à jour l'adaptateur ou affichez les médicaments ici
-                        Log.d("MainActivity", "Nombre de médicaments : " + medications.size());
-                        for (Medicament medicament : medications) {
-                            Log.d("MainActivity", "Médicament: " + medicament.getNom());
-                        }
-                    })
-                    .addOnFailureListener(e -> {
-                        Log.e("MainActivity", "Erreur lors du chargement des médicaments", e);
-                    });
-        } else {
-            Log.e("MainActivity", "Utilisateur non authentifié.");
-        }
     }
 
     private void scheduleMedicationReminders(Medicament medicament) {
@@ -138,8 +96,6 @@ public class MainActivityMedi extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     Log.e("MainActivity", "Erreur de format pour l'heure: " + e.getMessage());
                 }
-            } else {
-                Log.e("MainActivity", "Format d'heure invalide pour " + medicament.getNom() + ": " + time);
             }
         }
     }

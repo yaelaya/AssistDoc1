@@ -1,18 +1,14 @@
 package ma.ensa.www.assistdoc.entities;
 
 
-
 public class Medicament {
-
-    public String id;
-    private String nom;
+    private String userId;
+    private String id;
     private String dosage;
     private String frequence;
     private String heurePris;
+    private String nom;
 
-
-    public Medicament() {
-    }
     public Medicament(String nom, String dosage, String frequence, String heurePris) {
         this.nom = nom;
         this.dosage = dosage;
@@ -20,21 +16,25 @@ public class Medicament {
         this.heurePris = heurePris;
     }
 
-    // Getters et setters
+    public Medicament() {
+
+    }
+
+    // Getters and setters for each field
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
     }
 
     public String getDosage() {
@@ -59,5 +59,13 @@ public class Medicament {
 
     public void setHeurePris(String heurePris) {
         this.heurePris = heurePris;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 }

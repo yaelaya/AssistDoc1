@@ -20,9 +20,9 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
     private List<Medicament> medications;
     private List<Medicament> medicationsFull;
     private List<Medicament> medicationsFiltered;
-    private final OnDeleteListener onDelete;
+    private final MedicationViewHolder.OnDeleteListener onDelete;
 
-    public MedicationAdapter(List<Medicament> medications, OnDeleteListener onDelete) {
+    public MedicationAdapter(List<Medicament> medications, MedicationViewHolder.OnDeleteListener onDelete) {
         this.medications = medications;
         this.medicationsFull = new ArrayList<>(medications);
         this.medicationsFiltered = new ArrayList<>(medications);
@@ -45,6 +45,7 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
                 .inflate(R.layout.item_medication, parent, false);
         return new MedicationViewHolder(view);
     }
+
     public List<Medicament> getMedications() {
         return new ArrayList<>(medicationsFiltered); // Retourne une copie de la liste filtrée
     }
@@ -56,7 +57,7 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
         holder.textMedTime.setText(medicament.getHeurePris());
 
         holder.itemView.setOnLongClickListener(v -> {
-            onDelete.onDelete(medicationsFiltered.indexOf(medicament));
+           // onDelete.onDelete(medicationsFiltered.indexOf(medicament));
             return true;
         });
     }
@@ -113,12 +114,13 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
 
         public MedicationViewHolder(View itemView) {
             super(itemView);
-            textMedName = itemView.findViewById(R.id.textMedName);
+           /*   textMedName = itemView.findViewById(R.id.textMedName);
             textMedTime = itemView.findViewById(R.id.textMedTime);
+        }*/
         }
-    }
 
-    public interface OnDeleteListener {
-        void onDelete(int position);
-    }
-}
+        public interface OnDeleteListener {
+            void onDelete(int position);
+        }
+
+    }}

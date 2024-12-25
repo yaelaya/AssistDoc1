@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".WekaMain">
+
+    <!-- Age Input -->
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Age:"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edtAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Enter your age" />
+
+    <!-- Gender Selection -->
+    <TextView
+        android:id="@+id/tvGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Gender:"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/rgGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
+
+    <!-- Symptoms Selection -->
+    <TextView
+        android:id="@+id/tvSymptoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Symptoms:"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/chkFever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fever" />
+
+    <CheckBox
+        android:id="@+id/chkCough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cough" />
+
+    <CheckBox
+        android:id="@+id/chkFatigue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fatigue" />
+
+    <CheckBox
+        android:id="@+id/chkDifficultyBreathing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difficulty Breathing" />
+
+    <CheckBox
+        android:id="@+id/chkHeadache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Headache" />
+
+    <!-- Cholesterol Level Dropdown -->
+    <TextView
+        android:id="@+id/tvCholesterol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Cholesterol Level:"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spinnerCholesterol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Blood Pressure Dropdown -->
+    <TextView
+        android:id="@+id/tvBloodPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Blood Pressure:"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spinnerBloodPressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Predict Button -->
+    <Button
+        android:id="@+id/btnPredict"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Predict Disease" />
+
+    <!-- Predicted Disease Output -->
+    <TextView
+        android:id="@+id/tvPredictedDisease"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:visibility="gone" /> <!-- Initially hidden -->
+</LinearLayout>

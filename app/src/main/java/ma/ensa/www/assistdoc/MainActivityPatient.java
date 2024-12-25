@@ -75,7 +75,7 @@ public class MainActivityPatient extends AppCompatActivity {
                         gender = "Ms.";
                         break;
                 }
-                Intent symp = new Intent(MainActivityPatient.this, Activity_Symptoms.class);
+                Intent symp = new Intent(MainActivityPatient.this, WekaMain.class);
                 symp.putExtra("name",name);
                 symp.putExtra("gender",gender);
                 startActivity(symp);

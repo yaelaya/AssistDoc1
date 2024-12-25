@@ -57,6 +57,22 @@
         <activity
             android:name=".Activity_Symptoms"
             android:theme="@style/home_theme" />
+        <activity
+            android:name=".WekaMain"
+            android:theme="@style/home_theme" />
+        <activity
+            android:name=".WekaTraining"
+            android:theme="@style/home_theme"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".WekaPrediction"
+            android:theme="@style/home_theme"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".WekaDiseasePrediction"
+            android:theme="@style/home_theme"
+            tools:ignore="Instantiatable" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
